@@ -1,295 +1,174 @@
-// Copyright 2018-present the Flutter authors. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 import 'product.dart';
 
 class ProductsRepository {
   static List<Product> loadProducts(Category category) {
-    const allProducts = <Product>[
+    List<Product> allProducts = <Product>[
+      // 🔹 Electronics
       Product(
-        category: Category.accessories,
-        id: 0,
-        isFeatured: true,
-        name: 'Vagabond sack',
-        price: 120,
-      ),
-      Product(
-        category: Category.accessories,
+        category: Category.electronics,
         id: 1,
-        isFeatured: true,
-        name: 'Stella sunglasses',
-        price: 58,
+        name: "Samsung Galaxy S21",
+        price: 12000000,
+        imageUrl: "https://images.samsung.com/is/image/samsung/p6pim/id/galaxys21.png",
       ),
       Product(
-        category: Category.accessories,
+        category: Category.electronics,
         id: 2,
-        isFeatured: false,
-        name: 'Whitney belt',
-        price: 35,
+        name: "Sony WH-1000XM4",
+        price: 4500000,
+        imageUrl: "https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SL1500_.jpg",
       ),
       Product(
-        category: Category.accessories,
+        category: Category.electronics,
         id: 3,
-        isFeatured: true,
-        name: 'Garden strand',
-        price: 98,
+        name: "Asus ROG Laptop",
+        price: 23000000,
+        imageUrl: "https://dlcdnwebimgs.asus.com/gain/ba3f9ff9-rog-laptop.png",
       ),
       Product(
-        category: Category.accessories,
+        category: Category.electronics,
         id: 4,
-        isFeatured: false,
-        name: 'Strut earrings',
-        price: 34,
+        name: "Canon EOS 90D",
+        price: 17000000,
+        imageUrl: "https://i1.adis.ws/i/canon/eos-90d-frt_wit",
       ),
       Product(
-        category: Category.accessories,
+        category: Category.electronics,
         id: 5,
-        isFeatured: false,
-        name: 'Varsity socks',
-        price: 12,
+        name: "LG 55 Inch OLED TV",
+        price: 25000000,
+        imageUrl: "https://www.lg.com/id/images/tv/md07555751/gallery/medium01.jpg",
       ),
+
+      // 🔹 Fashion
       Product(
-        category: Category.accessories,
+        category: Category.fashion,
         id: 6,
-        isFeatured: false,
-        name: 'Weave keyring',
-        price: 16,
+        name: "Nike Air Max",
+        price: 2000000,
+        imageUrl: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b19b7c6d-6d02-4e73-b8db-223cbeef7f74/air-max-shoes.png",
       ),
       Product(
-        category: Category.accessories,
+        category: Category.fashion,
         id: 7,
-        isFeatured: true,
-        name: 'Gatsby hat',
-        price: 40,
+        name: "Levi’s Denim Jacket",
+        price: 1500000,
+        imageUrl: "https://lsco.scene7.com/is/image/lsco/levis/clothing/jackets/denim-jacket.jpg",
       ),
       Product(
-        category: Category.accessories,
+        category: Category.fashion,
         id: 8,
-        isFeatured: true,
-        name: 'Shrug bag',
-        price: 198,
+        name: "Casio G-Shock",
+        price: 1800000,
+        imageUrl: "https://gshock.casio.com/content/dam/gshock/product/g-shock.png",
       ),
       Product(
-        category: Category.home,
+        category: Category.fashion,
         id: 9,
-        isFeatured: true,
-        name: 'Gilt desk trio',
-        price: 58,
+        name: "Batik Modern",
+        price: 500000,
+        imageUrl: "https://cdn.idntimes.com/content-images/community/2019/08/20190820-104226-cc53e3a6286a321c5c92f3d9730b2f49.jpg",
       ),
       Product(
-        category: Category.home,
+        category: Category.fashion,
         id: 10,
-        isFeatured: false,
-        name: 'Copper wire rack',
-        price: 18,
+        name: "Michael Kors Bag",
+        price: 3200000,
+        imageUrl: "https://www.michaelkors.global/dw/image/v2/BGBV_PRD/on/demandware.static/-/Sites-mk-master-catalog/default/dw5d3f3b69/30S1GTVT3L-0010_1.jpg",
       ),
+
+      // 🔹 Home
       Product(
         category: Category.home,
         id: 11,
-        isFeatured: false,
-        name: 'Soothe ceramic set',
-        price: 28,
+        name: "Philips Rice Cooker",
+        price: 900000,
+        imageUrl: "https://www.philips.co.id/c-dam/b2c/category-pages/kitchen/rice-cookers/rice-cooker.jpg",
       ),
       Product(
         category: Category.home,
         id: 12,
-        isFeatured: false,
-        name: 'Hurrahs tea set',
-        price: 34,
+        name: "Xiaomi Smart Vacuum",
+        price: 3500000,
+        imageUrl: "https://i01.appmifile.com/webfile/globalimg/products/vacuum-cleaner.png",
       ),
       Product(
         category: Category.home,
         id: 13,
-        isFeatured: true,
-        name: 'Blue stone mug',
-        price: 18,
+        name: "IKEA Sofa Bed",
+        price: 7500000,
+        imageUrl: "https://www.ikea.com/id/in/images/products/friheten-sofa-bed__0736965_pe740564_s5.jpg",
       ),
       Product(
         category: Category.home,
         id: 14,
-        isFeatured: true,
-        name: 'Rainwater tray',
-        price: 27,
+        name: "Panasonic Microwave",
+        price: 1800000,
+        imageUrl: "https://panasonic.com/images/microwave.jpg",
       ),
       Product(
         category: Category.home,
         id: 15,
-        isFeatured: true,
-        name: 'Chambray napkins',
-        price: 16,
+        name: "Miyako Blender",
+        price: 450000,
+        imageUrl: "https://miyako.co.id/wp-content/uploads/2021/05/BL-211-Plymouth-Blue.jpg",
       ),
+
+      // 🔹 Beauty
       Product(
-        category: Category.home,
+        category: Category.beauty,
         id: 16,
-        isFeatured: true,
-        name: 'Succulent planters',
-        price: 16,
+        name: "Skincare Serum",
+        price: 250000,
+        imageUrl: "https://images.soco.id/0AbcSerumSkincare.jpg",
       ),
       Product(
-        category: Category.home,
+        category: Category.beauty,
         id: 17,
-        isFeatured: false,
-        name: 'Quartet table',
-        price: 175,
+        name: "Wardah Foundation",
+        price: 120000,
+        imageUrl: "https://images.wardahbeauty.com/product/foundation.jpg",
       ),
       Product(
-        category: Category.home,
+        category: Category.beauty,
         id: 18,
-        isFeatured: true,
-        name: 'Kitchen quattro',
-        price: 129,
+        name: "Make Over Lipstick",
+        price: 95000,
+        imageUrl: "https://makeoverforall.com/wp-content/uploads/2021/06/makeover-lipstick.jpg",
       ),
       Product(
-        category: Category.clothing,
+        category: Category.beauty,
         id: 19,
-        isFeatured: false,
-        name: 'Clay sweater',
-        price: 48,
+        name: "Maybelline Mascara",
+        price: 150000,
+        imageUrl: "https://maybelline.com/images/mascara.jpg",
       ),
       Product(
-        category: Category.clothing,
+        category: Category.beauty,
         id: 20,
-        isFeatured: false,
-        name: 'Sea tunic',
-        price: 45,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 21,
-        isFeatured: false,
-        name: 'Plaster tunic',
-        price: 38,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 22,
-        isFeatured: false,
-        name: 'White pinstripe shirt',
-        price: 70,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 23,
-        isFeatured: false,
-        name: 'Chambray shirt',
-        price: 70,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 24,
-        isFeatured: true,
-        name: 'Seabreeze sweater',
-        price: 60,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 25,
-        isFeatured: false,
-        name: 'Gentry jacket',
-        price: 178,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 26,
-        isFeatured: false,
-        name: 'Navy trousers',
-        price: 74,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 27,
-        isFeatured: true,
-        name: 'Walter henley (white)',
-        price: 38,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 28,
-        isFeatured: true,
-        name: 'Surf and perf shirt',
-        price: 48,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 29,
-        isFeatured: true,
-        name: 'Ginger scarf',
-        price: 98,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 30,
-        isFeatured: true,
-        name: 'Ramona crossover',
-        price: 68,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 31,
-        isFeatured: false,
-        name: 'Chambray shirt',
-        price: 38,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 32,
-        isFeatured: false,
-        name: 'Classic white collar',
-        price: 58,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 33,
-        isFeatured: true,
-        name: 'Cerise scallop tee',
-        price: 42,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 34,
-        isFeatured: false,
-        name: 'Shoulder rolls tee',
-        price: 27,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 35,
-        isFeatured: false,
-        name: 'Grey slouch tank',
-        price: 24,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 36,
-        isFeatured: false,
-        name: 'Sunshirt dress',
-        price: 58,
-      ),
-      Product(
-        category: Category.clothing,
-        id: 37,
-        isFeatured: true,
-        name: 'Fine lines tee',
-        price: 58,
+        name: "Garnier Micellar Water",
+        price: 35000,
+        imageUrl: "https://garnier.co.id/images/micellar.jpg",
       ),
     ];
+
+    // copy aja biar sampai 38
+    for (int i = 21; i <= 38; i++) {
+      allProducts.add(
+        Product(
+          category: Category.electronics,
+          id: i,
+          name: "Produk Dummy $i",
+          price: 100000 * i,
+          imageUrl: "https://via.placeholder.com/200x300.png?text=Produk+$i",
+        ),
+      );
+    }
+
     if (category == Category.all) {
       return allProducts;
     } else {
-      return allProducts.where((Product p) {
-        return p.category == category;
-      }).toList();
+      return allProducts.where((p) => p.category == category).toList();
     }
   }
 }

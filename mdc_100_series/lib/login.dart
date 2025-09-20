@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'colors.dart'; // biar bisa akses kShrineBrown900 dan kShrinePink100
+import 'colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,53 +11,37 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          children: <Widget>[
-            const SizedBox(height: 80.0),
+          children: [
+            const SizedBox(height: 80),
             Column(
-              children: <Widget>[
+              children: [
                 Image.asset('assets/unlimited.png'),
-                const SizedBox(height: 16.0),
-                Text(
-                  'UNLIMITED',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
+                const SizedBox(height: 16),
+                Text('UNLIMITED', style: Theme.of(context).textTheme.headlineSmall),
               ],
             ),
-            const SizedBox(height: 120.0),
-
-            // ✅ Single Username field
+            const SizedBox(height: 120),
             TextField(
               controller: _usernameController,
-              decoration: const InputDecoration(
-                filled: true,
-                labelText: 'Username',
-              ),
+              decoration: const InputDecoration(filled: true, labelText: 'Username'),
             ),
-            const SizedBox(height: 12.0),
-
-            // ✅ Single Password field
+            const SizedBox(height: 12),
             TextField(
               controller: _passwordController,
-              decoration: const InputDecoration(
-                filled: true,
-                labelText: 'Password',
-              ),
+              decoration: const InputDecoration(filled: true, labelText: 'Password'),
               obscureText: true,
             ),
-
-            const SizedBox(height: 120.0),
-
-            // Button bar
+            const SizedBox(height: 120),
             OverflowBar(
               alignment: MainAxisAlignment.end,
-              children: <Widget>[
+              children: [
                 TextButton(
                   child: const Text('CANCEL'),
                   onPressed: () {
@@ -65,9 +49,9 @@ class _LoginPageState extends State<LoginPage> {
                     _passwordController.clear();
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: kShrineBrown900,
+                    foregroundColor: kShrinePurple,
                     shape: const BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                      borderRadius: BorderRadius.all(Radius.circular(7)),
                     ),
                   ),
                 ),
@@ -77,11 +61,11 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: kShrineBrown900,
-                    backgroundColor: kShrinePink100,
+                    foregroundColor: kShrineSurface,
+                    backgroundColor: kShrinePink,
                     elevation: 8.0,
                     shape: const BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                      borderRadius: BorderRadius.all(Radius.circular(7)),
                     ),
                   ),
                 ),
